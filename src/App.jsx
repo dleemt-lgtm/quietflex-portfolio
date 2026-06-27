@@ -210,7 +210,7 @@ function ProjectCard({ project }) {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
         <div style={{ flex: 1 }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
-            <span style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", color: COLORS.accent, background: `${COLORS.accent}18`, padding: "0.15rem 0.5rem", borderRadius: 4, letterSpacing: "0.05em", textTransform: "uppercase" }}>
+            <span style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", color: "#A5A7F7", background: `${COLORS.accent}28`, padding: "0.15rem 0.5rem", borderRadius: 4, letterSpacing: "0.05em", textTransform: "uppercase" }}>
               {project.category}
             </span>
             <span style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", color: COLORS.textFaint }}>
