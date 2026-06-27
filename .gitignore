@@ -1,0 +1,30 @@
+# Dependencies & build
+node_modules/
+dist/
+.env
+.env.local
+
+# Local editor / agent tooling
+.claude/
+terminals/
+
+# Agent orchestration (local only)
+bus.ndjson
+.bus-driver/
+
+# DropKit harness & working context
+dropkit/
+.dropkit/
+
+# Design prototypes & origin material
+originstory/
+
+# Agent planning & navigation surface (not for public repo)
+AGENTS.md
+overall-plan.md
+decisions-log.md
+INDEX.md
+CODE_MAP.md
+ROUTING.md
+glossary.md
+CHANGELOG.md
