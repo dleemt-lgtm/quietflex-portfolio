@@ -6,7 +6,7 @@ const COLORS = {
   cardBorder: "#22222E",
   accent: "#6366F1",
   accentDim: "#4345a8",
-  text: "#E8E6E0",
+  text: "#F0EEE8",
   textMuted: "#B0AEC8",
   textFaint: "#3A3850",
   tagBg: "#1E1E2E",
@@ -135,7 +135,7 @@ function TerminalHero({ name, tagline }) {
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 2rem", maxWidth: 760, margin: "0 auto" }}>
-      <div style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.8rem", color: COLORS.accent, marginBottom: "2rem", lineHeight: 2 }}>
+      <div style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.8rem", color: COLORS.accent, marginBottom: "2rem", lineHeight: 2.4 }}>
         {displayed.map((line, i) => (
           <div key={i} style={{ opacity: 0.85 }}>{line}</div>
         ))}
