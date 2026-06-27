@@ -153,9 +153,6 @@ function TerminalHero({ name, tagline }) {
           <a href="#work" style={{ background: COLORS.accent, color: "#fff", padding: "0.65rem 1.5rem", borderRadius: 6, fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "0.9rem", textDecoration: "none", letterSpacing: "0.01em" }}>
             See the work
           </a>
-          <a href="mailto:dan@quietflex.dev" style={{ border: `1px solid ${COLORS.cardBorder}`, color: COLORS.text, padding: "0.65rem 1.5rem", borderRadius: 6, fontFamily: "'Inter', sans-serif", fontWeight: 500, fontSize: "0.9rem", textDecoration: "none" }}>
-            Contact
-          </a>
           <a href="https://github.com/dleemt-lgtm" target="_blank" rel="noopener noreferrer" style={{ border: `1px solid ${COLORS.cardBorder}`, color: COLORS.textMuted, padding: "0.65rem 1.5rem", borderRadius: 6, fontFamily: "'Inter', sans-serif", fontWeight: 500, fontSize: "0.9rem", textDecoration: "none" }}>
             GitHub
           </a>
