@@ -7,7 +7,7 @@ const COLORS = {
   accent: "#6366F1",
   accentDim: "#4345a8",
   text: "#E8E6E0",
-  textMuted: "#7A7890",
+  textMuted: "#B0AEC8",
   textFaint: "#3A3850",
   tagBg: "#1E1E2E",
 };
