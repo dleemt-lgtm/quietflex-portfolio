@@ -99,8 +99,8 @@ const CATEGORIES = ["All", "AI Tools", "Automations", "Written work / Prompts", 
 
 const TERMINAL_LINES = [
   { text: "> initializing quietflex...", delay: 0 },
-  { text: "> wiring models. loading work.", delay: 700 },
-  { text: "> dan lee. ready.", delay: 1500 },
+  { text: "> loading skills. connecting tools.", delay: 700 },
+  { text: "> models loaded and wired. ready.", delay: 1500 },
 ];
 
 function useTypewriter(lines) {
