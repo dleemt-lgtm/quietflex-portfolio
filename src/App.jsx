@@ -134,7 +134,7 @@ function TerminalHero({ name, tagline }) {
   }, [done]);
 
   return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 2rem", maxWidth: 760, margin: "0 auto" }}>
+    <div style={{ padding: "clamp(5rem, 15vh, 10rem) 2rem clamp(4rem, 10vh, 7rem)", maxWidth: 760, margin: "0 auto" }}>
       <div style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.8rem", color: COLORS.accent, marginBottom: "2rem", lineHeight: 2.4 }}>
         {displayed.map((line, i) => (
           <div key={i} style={{ opacity: 0.85 }}>{line}</div>
@@ -357,7 +357,7 @@ export default function App() {
               {[
                 { label: "Stack", value: "Claude API, MCP, DropKit, React, Python, n8n" },
                 { label: "Approach", value: "Wire it up. See what breaks. Fix it. Ship it." },
-                { label: "Status", value: "Building in public. Not looking. Just showing work." },
+                { label: "Status", value: "Building in public. Showing work." },
               ].map(({ label, value }) => (
                 <div key={label}>
                   <div style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", color: COLORS.accent, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "0.3rem" }}>{label}</div>
