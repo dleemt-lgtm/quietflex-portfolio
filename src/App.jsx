@@ -95,7 +95,7 @@ const PROJECTS = [
   },
 ];
 
-const CATEGORIES = ["All", "AI Tools", "Automations", "Written work / Prompts", "General software projects"];
+const CATEGORIES = ["All", "AI Tools", "Automations", "General software projects"];
 
 const TERMINAL_LINES = [
   { text: "> initializing quietflex...", delay: 0 },
@@ -108,6 +108,12 @@ function useTypewriter(lines) {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      setDisplayed(lines.map((l) => l.text));
+      setDone(true);
+      return;
+    }
     let timeouts = [];
     lines.forEach((line, i) => {
       const t = setTimeout(() => {
@@ -128,6 +134,11 @@ function TerminalHero({ name, tagline }) {
 
   useEffect(() => {
     if (done) {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion) {
+        setShowMain(true);
+        return;
+      }
       const t = setTimeout(() => setShowMain(true), 400);
       return () => clearTimeout(t);
     }
@@ -155,6 +166,9 @@ function TerminalHero({ name, tagline }) {
           </a>
           <a href="https://github.com/dleemt-lgtm" target="_blank" rel="noopener noreferrer" style={{ border: `1px solid ${COLORS.cardBorder}`, color: COLORS.textMuted, padding: "0.65rem 1.5rem", borderRadius: 6, fontFamily: "'Inter', sans-serif", fontWeight: 500, fontSize: "0.9rem", textDecoration: "none" }}>
             GitHub
+          </a>
+          <a href="https://x.com/quietflexdev" target="_blank" rel="noopener noreferrer" style={{ border: `1px solid ${COLORS.cardBorder}`, color: COLORS.textMuted, padding: "0.65rem 1.5rem", borderRadius: 6, fontFamily: "'Inter', sans-serif", fontWeight: 500, fontSize: "0.9rem", textDecoration: "none" }}>
+            X
           </a>
         </div>
       </div>
@@ -299,11 +313,11 @@ export default function App() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono&family=Inter:wght@400;500;600&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { background: ${COLORS.bg}; color: ${COLORS.text}; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .project-card:hover { border-color: ${COLORS.accentDim}; box-shadow: 0 4px 20px #00000033; }
         .project-card:focus-visible { outline: 2px solid ${COLORS.accent}; outline-offset: 3px; }
         .filter-btn:focus-visible { outline: 2px solid ${COLORS.accent}; outline-offset: 2px; }
         ::-webkit-scrollbar { width: 6px; }
@@ -375,9 +389,14 @@ export default function App() {
           <p style={{ fontFamily: "'Inter', sans-serif", color: COLORS.textMuted, fontSize: "0.95rem", marginBottom: "2rem" }}>
             This is a live document. Projects get added when they're worth showing.
           </p>
-          <a href="https://github.com/dleemt-lgtm" target="_blank" rel="noopener noreferrer" style={{ background: COLORS.accent, color: "#fff", padding: "0.75rem 2rem", borderRadius: 6, fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "0.95rem", textDecoration: "none", display: "inline-block" }}>
-            GitHub
-          </a>
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="https://github.com/dleemt-lgtm" target="_blank" rel="noopener noreferrer" style={{ background: COLORS.accent, color: "#fff", padding: "0.75rem 2rem", borderRadius: 6, fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "0.95rem", textDecoration: "none", display: "inline-block" }}>
+              GitHub
+            </a>
+            <a href="https://x.com/quietflexdev" target="_blank" rel="noopener noreferrer" style={{ border: `1px solid ${COLORS.cardBorder}`, color: COLORS.textMuted, padding: "0.75rem 2rem", borderRadius: 6, fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "0.95rem", textDecoration: "none", display: "inline-block" }}>
+              X / @quietflexdev
+            </a>
+          </div>
           <div style={{ marginTop: "4rem", fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", color: COLORS.textFaint, letterSpacing: "0.05em" }}>
             © 2026 Dan Lee · Built with Claude · quietflex.dev
           </div>
